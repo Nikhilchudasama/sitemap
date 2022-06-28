@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravelium\Sitemap;
+namespace Nik\Sitemap;
 
 /**
  * Sitemap class for laravel-sitemap package.
