@@ -2,8 +2,8 @@
 
 *Laravel Sitemap generator for Laravel.*
 
-* Original this package [Laravelium Sitemap](https://github.com/Laravelium/laravel-sitemap) , I adopted this package and tested with laravel 9.
-* PHPTest is not tested
+* Original this package [Laravelium Sitemap](https://github.com/Laravelium/laravel-sitemap) , I adopted this package and tested with laravel 9, 10, 11, 12, 13.
+* PHPUnit tests are passing on PHP 8.3.
 
 ## Notes
 
