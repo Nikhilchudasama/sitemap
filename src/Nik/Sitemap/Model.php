@@ -18,90 +18,90 @@ class Model
     /**
      * @var bool
      */
-    public $testing = false;
+    public bool $testing = false;
 
     /**
      * @var array
      */
-    private $items = [];
+    private array $items = [];
 
     /**
      * @var array
      */
-    private $sitemaps = [];
+    private array $sitemaps = [];
 
     /**
      * @var string
      */
-    private $title = null;
+    private ?string $title = null;
 
     /**
      * @var string
      */
-    private $link = null;
+    private ?string $link = null;
 
     /**
      * Enable or disable xsl styles.
      *
      * @var bool
      */
-    private $useStyles = true;
+    private bool $useStyles = true;
 
     /**
      * Set custom location for xsl styles (must end with slash).
      *
      * @var string
      */
-    private $sloc = '/vendor/sitemap/styles/';
+    private string $sloc = '/vendor/sitemap/styles/';
 
     /**
      * Enable or disable cache.
      *
      * @var bool
      */
-    private $useCache = false;
+    private bool $useCache = false;
 
     /**
      * Unique cache key.
      *
      * @var string
      */
-    private $cacheKey = 'laravel-sitemap.';
+    private string $cacheKey = 'laravel-sitemap.';
 
     /**
      * Cache duration, can be int or timestamp.
      *
      * @var Carbon|Datetime|int
      */
-    private $cacheDuration = 3600;
+    private mixed $cacheDuration = 3600;
 
     /**
      * Escaping html entities.
      *
      * @var bool
      */
-    private $escaping = true;
+    private bool $escaping = true;
 
     /**
      * Use limitSize() for big sitemaps.
      *
      * @var bool
      */
-    private $useLimitSize = false;
+    private bool $useLimitSize = false;
 
     /**
      * Custom max size for limitSize().
      *
      * @var bool
      */
-    private $maxSize = null;
+    private ?int $maxSize = null;
 
     /**
      * Use gzip compression.
      *
      * @var bool
      */
-    private $useGzip = false;
+    private bool $useGzip = false;
 
     /**
      * Populating model variables from configuation file.

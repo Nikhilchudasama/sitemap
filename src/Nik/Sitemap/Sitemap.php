@@ -24,45 +24,33 @@ class Sitemap
 {
     /**
      * Model instance.
-     *
-     * @var Model
      */
-    public $model = null;
+    public ?Model $model = null;
 
     /**
      * CacheRepository instance.
-     *
-     * @var CacheRepository
      */
-    public $cache = null;
+    public ?CacheRepository $cache = null;
 
     /**
      * ConfigRepository instance.
-     *
-     * @var ConfigRepository
      */
-    protected $configRepository = null;
+    protected ?ConfigRepository $configRepository = null;
 
     /**
      * Filesystem instance.
-     *
-     * @var Filesystem
      */
-    protected $file = null;
+    protected ?Filesystem $file = null;
 
     /**
      * ResponseFactory instance.
-     *
-     * @var ResponseFactory
      */
-    protected $response = null;
+    protected ?ResponseFactory $response = null;
 
     /**
      * ViewFactory instance.
-     *
-     * @var ViewFactory
      */
-    protected $view = null;
+    protected ?ViewFactory $view = null;
 
     /**
      * Using constructor we populate our model from configuration file
@@ -70,8 +58,14 @@ class Sitemap
      *
      * @param array $config
      */
-    public function __construct(array $config, CacheRepository $cache, ConfigRepository $configRepository, Filesystem $file, ResponseFactory $response, ViewFactory $view)
-    {
+    public function __construct(
+        array $config,
+        CacheRepository $cache,
+        ConfigRepository $configRepository,
+        Filesystem $file,
+        ResponseFactory $response,
+        ViewFactory $view
+    ) {
         $this->cache = $cache;
         $this->configRepository = $configRepository;
         $this->file = $file;
