@@ -52,7 +52,7 @@ class Model
      *
      * @var string
      */
-    private string $sloc = '/vendor/sitemap/styles/';
+    private ?string $sloc = '/vendor/sitemap/styles/';
 
     /**
      * Enable or disable cache.
