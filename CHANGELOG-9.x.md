@@ -1,5 +1,15 @@
 # Change log
 
+## v9.0.1 (2026-05-15)
+
+### Added
+- Comprehensive `EXAMPLES.md` file with detailed usage scenarios.
+- Integrated quick-start guide in `README.md`.
+
+### Changed
+- Major cleanup of `README.md` to remove clutter and outdated links.
+- Updated support links in `composer.json` to point to the correct repository.
+
 ## v9.0.0 (2026-05-13)
 
 ### Added

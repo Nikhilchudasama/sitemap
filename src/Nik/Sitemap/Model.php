@@ -7,9 +7,9 @@ namespace Nik\Sitemap;
  *
  * @author Rumen Damyanov <r@alfamatter.com>
  *
- * @version 7.0.1
+ * @version 9.0.1
  *
- * @link https://gitlab.com/Laravelium
+ * @link https://github.com/Nikhilchudasama/sitemap
  *
  * @license http://opensource.org/licenses/mit-license.php MIT License
  */

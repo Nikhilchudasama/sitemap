@@ -3,7 +3,7 @@
     "description": "Laravel Sitemap package for Laravel.",
     "keywords": ["laravel", "php", "sitemap", "generator", "xml", "html", "google-news"],
     "license": "MIT",
-    "version": "9.0.0",
+    "version": "9.0.1",
     "authors": [
         {
             "name": "Nikhil Chudasama",
@@ -13,9 +13,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/Laravelium/laravel-sitemap/issues",
-        "source": "https://github.com/Laravelium/laravel-sitemap",
-        "wiki": "https://github.com/Laravelium/laravel-sitemap/wiki"
+        "issues": "https://github.com/Nikhilchudasama/sitemap/issues",
+        "source": "https://github.com/Nikhilchudasama/sitemap"
     },
     "require": {
         "php": "^8.2",

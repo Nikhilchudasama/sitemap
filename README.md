@@ -1,45 +1,71 @@
-# **[Laravel Sitemap] package**
+# Laravel Sitemap
 
-*Laravel Sitemap generator for Laravel.*
+[![Total Downloads](https://img.shields.io/packagist/dt/nik/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nik/laravel-sitemap)
+[![License](https://img.shields.io/packagist/l/nik/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nik/laravel-sitemap)
 
-* Original this package [Laravelium Sitemap](https://github.com/Laravelium/laravel-sitemap) , I adopted this package and tested with laravel 9, 10, 11, 12, 13.
-* PHPUnit tests are passing on PHP 8.3.
+A powerful and easy-to-use sitemap generator for Laravel. Support for Google News, Images, Videos, and Multilingual sitemaps.
 
-## Notes
+## Features
 
-- Dev Branches are for development and are **UNSTABLE** (*use on your own risk*)!
+- [x] Supports Laravel 10, 11, 12, and 13.
+- [x] PHP 8.2+ Compatibility.
+- [x] Dynamic sitemap generation.
+- [x] Automatic caching.
+- [x] Support for Big Sitemaps (Sitemap Index).
+- [x] Google News, Images, Videos, and Multilingual support.
+- [x] Multiple output formats (XML, HTML, TXT).
 
 ## Installation
 
-Run the following command and provide the latest stable version :
+Install the package via composer:
 
 ```bash
 composer require nik/laravel-sitemap
 ```
 
-*Publish needed assets (styles, views, config files) :*
+(Optional) Publish the configuration file and views:
 
 ```bash
 php artisan vendor:publish --provider="Nik\Sitemap\SitemapServiceProvider"
 ```
-**Note:** *Composer won't update them after `composer update`, you'll need to do it manually!*
 
-## Examples
+## Quick Start
 
-- [How to generate dynamic sitemap (with optional caching)](https://github.com/Laravelium/laravel-sitemap/wiki/Dynamic-sitemap)
+Generate a simple sitemap in your `routes/web.php`:
 
-- [How to generate BIG sitemaps (with more than 1M items)](https://github.com/Laravelium/laravel-sitemap/wiki/Sitemap-index)
+```php
+use Nik\Sitemap\Sitemap;
 
-- [How to generate sitemap to a file](https://github.com/Laravelium/laravel-sitemap/wiki/Generate-sitemap)
+Route::get('sitemap.xml', function () {
+    /** @var Sitemap $sitemap */
+    $sitemap = app('sitemap');
 
-- [How to use multiple sitemaps with sitemap index](https://github.com/Laravelium/laravel-sitemap/wiki/Generate-BIG-sitemaps)
+    // Add static pages
+    $sitemap->add(url('/'), now(), '1.0', 'daily');
+    $sitemap->add(url('contact'), now(), '0.7', 'monthly');
 
-and more in the [Wiki](https://github.com/Laravelium/laravel-sitemap/wiki).
+    // Add dynamic items from database
+    $posts = \App\Models\Post::latest()->get();
+    foreach ($posts as $post) {
+        $sitemap->add(url($post->slug), $post->updated_at, '0.9', 'weekly');
+    }
 
-## Contribution guidelines
+    return $sitemap->render('xml');
+});
+```
 
-Before submiting new merge request or creating new issue, please read [contribution guidelines](https://gitlab.com/Laravelium/Sitemap/blob/master/CONTRIBUTING.md).
+## Advanced Usage
+
+For more detailed examples, please refer to the [EXAMPLES.md](EXAMPLES.md) file.
+
+### Common Scenarios:
+
+- **[Caching](EXAMPLES.md#caching)**: Speed up your sitemap generation.
+- **[Big Sitemaps](EXAMPLES.md#big-sitemaps-sitemap-index)**: Handling more than 50k items.
+- **[Save to File](EXAMPLES.md#generating-sitemap-to-a-file)**: Generate sitemap via Artisan commands.
+- **[Images & Videos](EXAMPLES.md#advanced-item-options)**: Add media to your sitemap items.
+- **[Multilingual](EXAMPLES.md#translations-multilingual)**: Support for `hreflang` tags.
 
 ## License
 
-This package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This package is open-sourced software licensed under the [MIT license](LICENSE.md).
