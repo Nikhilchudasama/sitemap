@@ -22,7 +22,7 @@ The most common way to use this package is to generate a sitemap dynamically on 
 ```php
 // routes/web.php
 
-use Nik\Sitemap\Sitemap;
+use Nikhil\Sitemap\Sitemap;
 
 Route::get('sitemap', function () {
     /** @var Sitemap $sitemap */

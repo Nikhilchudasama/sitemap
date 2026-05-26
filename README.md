@@ -1,7 +1,7 @@
 # Laravel Sitemap
 
-[![Total Downloads](https://img.shields.io/packagist/dt/nik/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nik/laravel-sitemap)
-[![License](https://img.shields.io/packagist/l/nik/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nik/laravel-sitemap)
+[![Total Downloads](https://img.shields.io/packagist/dt/nikhil/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nikhil/laravel-sitemap)
+[![License](https://img.shields.io/packagist/l/nikhil/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nikhil/laravel-sitemap)
 
 A powerful and easy-to-use sitemap generator for Laravel. Support for Google News, Images, Videos, and Multilingual sitemaps.
 
@@ -20,13 +20,15 @@ A powerful and easy-to-use sitemap generator for Laravel. Support for Google New
 Install the package via composer:
 
 ```bash
-composer require nik/laravel-sitemap
+composer require nikhil/laravel-sitemap
 ```
 
-(Optional) Publish the configuration file and views:
+(Optional) Publish the configuration file, views, or assets:
 
 ```bash
-php artisan vendor:publish --provider="Nik\Sitemap\SitemapServiceProvider"
+php artisan vendor:publish --tag="sitemap-config"
+php artisan vendor:publish --tag="sitemap-views"
+php artisan vendor:publish --tag="sitemap-assets"
 ```
 
 ## Quick Start
@@ -34,7 +36,7 @@ php artisan vendor:publish --provider="Nik\Sitemap\SitemapServiceProvider"
 Generate a simple sitemap in your `routes/web.php`:
 
 ```php
-use Nik\Sitemap\Sitemap;
+use Nikhil\Sitemap\Sitemap;
 
 Route::get('sitemap.xml', function () {
     /** @var Sitemap $sitemap */
@@ -65,6 +67,10 @@ For more detailed examples, please refer to the [EXAMPLES.md](EXAMPLES.md) file.
 - **[Save to File](EXAMPLES.md#generating-sitemap-to-a-file)**: Generate sitemap via Artisan commands.
 - **[Images & Videos](EXAMPLES.md#advanced-item-options)**: Add media to your sitemap items.
 - **[Multilingual](EXAMPLES.md#translations-multilingual)**: Support for `hreflang` tags.
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## License
 

@@ -6,7 +6,7 @@
 - Your commits must be **Verified**
 - Your **code coverage** must be **100%**
 - Your **unit tests** must be with **Passing** status (**no broken tests!**)
-- Your **coding style** must be valid [*PSR-2*](https://www.php-fig.org/psr/psr-2/) (*use this:* [*php-cs-fixer config*](https://gitlab.com/snippets/1749141))
+- Your **coding style** must be valid [*PSR-12*](https://www.php-fig.org/psr/psr-12/). Run `composer format` before submitting changes.
 
 
 ## New Issues
@@ -16,4 +16,4 @@ There is no special template for creating new issues, but please when create new
 
 ## Security Reports
 
-If you discover a security vulnerability within this package, please send an e-mail to Rumen Damyanov via [r@alfamatter.com](mailto:r@alfamatter.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to Rumen Damyanov via [chudasamanikhild@gmail.com](mailto:chudasamanikhild@gmail.com). All security vulnerabilities will be promptly addressed.

@@ -1,0 +1,7 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "resources/dist",
+        "resources/views"
+    ]
+}

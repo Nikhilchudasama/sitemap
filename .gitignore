@@ -3,6 +3,7 @@
 Thumbs.db
 *.sh
 .idea
+.vscode
 
 # composer
 composer.phar
@@ -12,9 +13,14 @@ composer.lock
 # cs
 .php_cs
 /.php_cs.cache
+/.php-cs-fixer.cache
+/.pint.cache
 
 # phpunit
+/.phpunit.cache
 /.phpunit.result.cache
+/build
+/phpunit.xml.bak
 
 # test runtime files
 /tests/tmp

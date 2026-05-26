@@ -1,9 +1,16 @@
 {
-    "name": "nik/laravel-sitemap",
+    "name": "nikhil/laravel-sitemap",
     "description": "Laravel Sitemap package for Laravel.",
-    "keywords": ["laravel", "php", "sitemap", "generator", "xml", "html", "google-news"],
+    "keywords": [
+        "laravel",
+        "php",
+        "sitemap",
+        "generator",
+        "xml",
+        "html",
+        "google-news"
+    ],
     "license": "MIT",
-    "version": "9.0.1",
     "authors": [
         {
             "name": "Nikhil Chudasama",
@@ -18,25 +25,54 @@
     },
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
-        "illuminate/filesystem": "^10.0|^11.0|^12.0|^13.0"
+        "illuminate/contracts": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/filesystem": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5|^11.0",
-        "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0"
+        "driftingly/rector-laravel": "^2.3",
+        "larastan/larastan": "^3.9",
+        "laravel/pint": "^1.14",
+        "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-arch": "^3.1",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "rector/rector": "^2.4"
     },
     "autoload": {
         "psr-4": {
-            "Nik\\Sitemap\\": "src/Nik/Sitemap/"
+            "Nikhil\\Sitemap\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nikhil\\Sitemap\\Test\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Nik\\Sitemap\\SitemapServiceProvider"
+                "Nikhil\\Sitemap\\SitemapServiceProvider"
             ]
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "format": "vendor/bin/pint",
+        "format:test": "vendor/bin/pint --test",
+        "refactor": "vendor/bin/rector --dry-run",
+        "refactor:fix": "vendor/bin/rector",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    }
 }
