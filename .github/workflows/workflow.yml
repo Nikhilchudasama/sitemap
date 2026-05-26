@@ -2,9 +2,9 @@ name: PHP tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, v10.x ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, v10.x ]
 
 jobs:
   php-tests:
@@ -34,9 +34,14 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    - name: Execute formatting check
+      run: composer format:test
+
     - name: Execute static analysis
       run: composer analyse
+
+    - name: Execute refactor check
+      run: composer refactor
       
     - name: Execute Pest tests
       run: composer test
-

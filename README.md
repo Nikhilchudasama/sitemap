@@ -1,5 +1,6 @@
 # Laravel Sitemap
 
+[![PHP tests](https://github.com/Nikhilchudasama/sitemap/actions/workflows/workflow.yml/badge.svg)](https://github.com/Nikhilchudasama/sitemap/actions/workflows/workflow.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/nikhil/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nikhil/laravel-sitemap)
 [![License](https://img.shields.io/packagist/l/nikhil/laravel-sitemap.svg?style=flat-square)](https://packagist.org/packages/nikhil/laravel-sitemap)
 
@@ -14,6 +15,11 @@ A powerful and easy-to-use sitemap generator for Laravel. Support for Google New
 - [x] Support for Big Sitemaps (Sitemap Index).
 - [x] Google News, Images, Videos, and Multilingual support.
 - [x] Multiple output formats (XML, HTML, TXT).
+
+## Requirements
+
+- PHP 8.2 or higher.
+- Laravel 10, 11, 12, or 13.
 
 ## Installation
 
@@ -67,6 +73,23 @@ For more detailed examples, please refer to the [EXAMPLES.md](EXAMPLES.md) file.
 - **[Save to File](EXAMPLES.md#generating-sitemap-to-a-file)**: Generate sitemap via Artisan commands.
 - **[Images & Videos](EXAMPLES.md#advanced-item-options)**: Add media to your sitemap items.
 - **[Multilingual](EXAMPLES.md#translations-multilingual)**: Support for `hreflang` tags.
+
+## Development
+
+Run the package checks locally:
+
+```bash
+composer format:test
+composer analyse
+composer refactor
+composer test
+```
+
+To run tests with coverage, enable a coverage driver such as Xdebug or PCOV, then run:
+
+```bash
+composer test-coverage
+```
 
 ## Changelog
 
